@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Background Colour Changer</title>
+  <style>
+  body{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+  }
+  h1{
+    color:white;
+    font-size:8em;
+  }
+  #btn{
+    font-size:10em;
+    border-radius:15px;
+    padding:25px;
+  }
+  </style>
+</head>
+
+<body>
+  <h1 id="heading"></h1>
+  <button id="btn">change</button>
+  <script>
+    let heading=document.getElementById("heading");
+    let btn=document.getElementById("btn");
+    let background=document.body;
+    btn.onclick=function(){
+      let color="#"+Math.floor(Math.random()*1000000);
+      background.style.backgroundColor=color;
+      heading.textContent=color;
+    }
+  </script>
+</body>
+
+</html>
