@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Counter</title>
+  <style>
+  body{
+    background:linear-gradient(#0f172a,#0d9488);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+  }
+  #cntr{
+    color:white;
+    font-size:6em;
+  }
+  #nmbr{
+    color:white;
+    font-size:15em;
+  }
+  button{
+    border:2px solid black ;
+    background-color:#1f1f1f;
+    color:white;
+    font-size:4em;
+    border-radius:10px;
+    margin:20px;
+    padding:15px;
+  }
+  </style>
+</head>
+
+<body>
+  <h1 id="cntr">Counter</h1>
+  <h1 id="nmbr">0</h1>
+  <div id="btns">
+    <button onclick=decrement()>decrement</button>
+    <button onclick=reset()>reset</button>
+    <button onclick=increment()>increment</button>
+  </div>
+  <script>
+    let number=document.getElementById("nmbr");
+    function decrement(){
+      number.textContent=Number(number.textContent)-1;
+    }
+    function reset() {
+      number.textContent = 0;
+    }
+    function increment(){
+      number.textContent=Number(number.textContent)+1;    
+    }
+  </script>
+</body>
+
+</html>
