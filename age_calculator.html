@@ -1,0 +1,116 @@
+<!DOCTYPE html><html><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Age Calculator</title>
+  <style>
+    body{
+      background:linear-gradient(#fffdd0,#e5e5e5);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      gap:300px;
+    }
+    #div1{
+      background-color:black;
+      border-radius:25px;
+      padding:50px;
+      display:flex;
+      flex-direction:row;
+      justify-content:center;
+      align-items:center;
+      gap:100px;
+    }
+#date{
+  font-size:3em;
+  border-radius:15px;
+  padding:10px;
+}
+#btn{
+  font-size:3em;
+  border-radius:15px;
+  padding:10px;
+}
+#div2{
+      background-color:black;
+      border-radius:25px;
+      padding:50px;
+      display:flex;
+      flex-direction:row;
+      justify-content:center;
+      align-items:center;
+      gap:50px;
+}
+span{
+  padding:20px;
+  background-color:#763739;
+  border-radius:25px;
+}
+h1{
+  text-align:center;
+  color:white;
+  font-size:4em;
+  margin:0;
+}
+p{
+  color:white;
+  font-size:4em;
+  margin:0;
+}
+  </style>
+</head>
+<body>
+  <div id="div1">
+    <input type="date" id="date">
+    <button id="btn" onclick=calculate()>Calculate</button>
+  </div>
+  <div id="div2">
+    <span>
+      <h1 id="years"></h1>
+      <p id="p1"></p>
+    </span>
+    <span>
+      <h1 id="months"></h1>
+      <p id="p2"></p>
+    </span>
+    <span>
+      <h1 id="days"></h1>
+      <p id="p3"></p>
+    </span>
+  </div>
+  <script>
+    let years=document.getElementById("years");
+    let p1=document.getElementById("p1");
+    let months=document.getElementById("months");
+    let p2=document.getElementById("p2");
+    let day=document.getElementById("days");
+    let p3=document.getElementById("p3");
+    function calculate()
+    {
+      let user_input=document.getElementById("date").value;
+      const dob=new Date(user_input);
+      const today=new Date();
+      let yrs = today.getFullYear()-dob.getFullYear();
+      let mnths=today.getMonth() - dob.getMonth();
+      let days=today.getDate() - dob.getDate();
+      if (days < 0)
+      {
+        mnths--;
+        const prevMonth = new Date(today.getFullYear(),today.getMonth(), 0);
+        days+=prevMonth.getDate();
+      }
+      if(mnths<0){
+        yrs--;
+        mnths += 12;
+      }
+      years.textContent=yrs;
+      months.textContent=mnths;
+      day.textContent=days;
+      p1.textContent="years";
+      p2.textContent="months";
+      p3.textContent="days";
+    }
+  </script>
+</body>
+</html>
