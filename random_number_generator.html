@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Random Number Generator</title>
+  <style>
+    body{
+      background: linear-gradient( #6a11cb, #2575fc);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+      gap:200px;
+    }
+    h1{
+      font-size:8em;
+      color:white;
+    }
+    #btn{
+      background-color:black;
+      color:white;
+      font-size:8em;
+      border-radius:15px;
+      padding:10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="Display"></h1>
+  <button id="btn">Generate</button>
+  <script>
+    let btn=document.getElementById("btn");
+    let Display=document.getElementById("Display");
+    btn.onclick=function(){
+      Display.textContent=Math.floor(Math.random()*100+1);
+    }
+  </script>
+</body>
+
+</html>
